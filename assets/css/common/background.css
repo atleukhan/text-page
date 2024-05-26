@@ -1,0 +1,34 @@
+.bg-orange-gradient{
+    background: rgb(245,104,87);
+    background: linear-gradient(90deg, rgba(245,104,87,1) 0%, rgba(253,164,96,1) 100%);
+}
+.bg-pink-gradient{
+    background: rgb(234,205,219);
+    background: linear-gradient(180deg, rgba(234,205,219,0) 19%, rgba(255,255,255,0.8575805322128851) 83%);
+}
+.bg-orange{
+    background-color: var(--orange);
+}
+.bg-orange-light{
+    background-color: var(--orange-light);
+}
+.bg-coral{
+    background-color: var(--coral);
+}
+.bg-green{
+    background-color: var(--green);
+}
+.bg-yellow{
+    background-color: var(--yellow);
+}
+.bg-pink{
+    background-color: var(--pink);
+}
+.bg-image{
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contains;
+}
+.bg-image-production{
+    background-image: url(/assets/images/production-bg.webp);
+}

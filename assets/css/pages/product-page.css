@@ -1,0 +1,89 @@
+.doc-image_button{
+    left:10px;
+    bottom: 10px;
+}
+.contains-banner img{
+    right:0;
+    bottom: -5px;
+}
+.icon{
+    width: 22px;
+    height: 22px;
+}
+.logo{
+    width: 48px;
+    height: 48px;
+}
+.checkbox{
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+.checkbox:hover{
+    color: var(--bs-secondary)!important;
+}
+.checked{
+    border: 1px solid var(--orange)!important;
+    color: var(--green)!important;
+}
+
+/* customisation fancybox */
+.f-button{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    transition: none!important;
+    background: linear-gradient(90deg, rgba(245,104,87,1) 0%, rgba(253,164,96,1) 100%);
+    color: var(--bs-white);
+}
+.f-button:hover{
+    color: var(--bs-white)!important;
+    background: var(--coral)!important;
+}
+.is-nav-selected{
+    border: 2px solid var(--orange)!important;
+    border-radius: 10px!important;
+    overflow: hidden!important;
+}
+.f-carousel__dots{
+    display: none;
+}
+.f-carousel__dots li{
+    opacity: 1!important;
+}
+.f-carousel__dots .is-current span{
+    background: var(--orange)!important;
+}
+.f-carousel__dot{
+    background: transparent!important;
+    border: 1px solid var(--orange)!important;
+    
+}
+/* customisation fancybox */
+
+/* media queries */
+@media (min-width: 768px) and (max-width: 992px){
+}
+@media (max-width:768px){
+    .contains-banner{
+        height: 300px;
+    }
+    .contains-banner img{
+        right:50px;
+        width: 80%!important;
+        bottom: 0px;
+    }
+
+    /* customisation fancybox */
+    .f-carousel__dots{
+        display: flex;
+        bottom: 15px;
+    }
+    .f-carousel__thumbs{
+        display: none;
+    }
+    .f-carousel__slide .doc-image_button{
+        display: none!important;
+    }
+    
+    /* customisation fancybox */
+}

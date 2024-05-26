@@ -1,0 +1,50 @@
+/* commons */
+@import url(common/background.css);
+@import url(common/text.css);
+@import url(common/colors.css);
+@import url(common/buttons.css);
+@import url(common/grid.css);
+
+/* components */
+@import url(components/top-banners.css);
+@import url(components/header.css);
+@import url(components/up-button.css);
+@import url(components/bottom-menu.css);
+@import url(components/catalog-menu.css);
+@import url(components/mobile-menu.css);
+
+/* pages */
+@import url(pages/product-page.css);
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@font-face {
+    font-family: Cocon-regular;
+    src: url(/assets/fonts/cocon_regular.otf);
+}
+
+/* colors */
+:root{
+    --orange: #F35E46;
+    --orange-light: #FFC082;
+    --yellow: #FAC68C;
+    --coral:#A0366B;
+    --green: #2ABE42;
+    --pink: #EACDDB;
+}
+
+*{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+h1, h2{
+    font-family: Cocon-regular;
+    margin-top: 0;
+}
+
+/* media queries */
+@media (min-width: 768px) and (max-width: 992px){
+}
+@media (max-width:768px){
+}

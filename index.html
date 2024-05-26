@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+
+    <!-- css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/assets/css/plugins/normalize.css">
+    <link rel="stylesheet" href="/assets/css/plugins/animate.css">
+    <link rel="stylesheet" href="/assets/css/plugins/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/assets/css/plugins/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/css/plugins/fancybox.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.css"/>
+    <link rel="stylesheet" href="/assets/css/index.css">
+
+    <title>Document</title>
+    <meta name="description" content="">
+</head>
+<body>
+
+    <!-- top banners -->
+    <div class="top-banners position-sticky top-0 w-100 start-0 d-flex flex-column align-items-center justify-content-center overflow-y-hidden">
+        <div id="top-banners_list" class="position-relative z-3 "></div>
+        <div class="position-absolute top-0 start-0 w-100 h-100 z-1 bg-orange" id="bg-gradient"></div>
+        <div class="position-absolute top-0 start-0 w-100 h-100 z-2 bg-light py-1" id="bg-gradient-line"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="py-3 shadow bg-white">
+        <div class="container">
+            <!-- header top -->
+            <div class="row mb-lg-4 mb-0 align-items-center justify-content-between">
+                <div class="col-lg-2 col-md-3 col-6">
+                    <a href="/">
+                        <img src="/assets/images/icons/logo.svg" class="w-100" alt="Логотип компании">
+                    </a>
+                </div>
+                <div class="col-6 d-lg-flex flex-column d-none">
+                    <span class="text-coral text-h">Здоровое пищеварение, очищение организма, красота и молодость</span>
+                    <span class="text-orange">Для тех, кто ценит свое здоровье</span>
+                </div>
+                <div class="col-2 d-lg-block d-none">
+                    <div class="d-flex align-items-center city" id="city">
+                        <i class="bi bi-geo-alt-fill text-orange me-2"></i>
+                        <button class="p-0 bg-transparent border-0 city-btn fw-bold text-s text-h border-bottom" onclick="toggleCityPopup();">Усть-Каменогорск</button>
+                    </div>
+                </div>
+                <div class="col-2 d-lg-block d-none">
+                    <div class="position-relative progress-bar-wrapper d-flex flex-column justify-content-center">
+                        <div class="d-flex align-items-center justify-content-end position-relative z-3 px-2">
+                            <span class="text-secondary text-xxs me-1" id="current-sum-total" data-sum="5450"></span>
+                            <span class="text-secondary text-xxs" id="sum-limit" data-limit="10000">из 10 000 ₸</span>
+                        </div>
+                        <div class="progress position-absolute top-0 start-0 w-100 z-1" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar bg-orange-gradient z-1"></div>
+                        </div>
+                    </div>
+                    <span class="text-secondary text-xs">До бесплатной доставки осталось</span>
+                </div>
+                <div class="col-6 d-lg-none d-block">
+                    <div class="d-flex align-items-center justify-content-end mobile-buttons">
+                        <div class="d-flex flex-column align-items-center me-3" id="question-button">
+                            <button class="p-0 bg-orange-gradient border-0 rounded-circle circle-button">
+                                <i class="bi bi-question-lg text-white fs-2"></i>
+                            </button>
+                            <span class="text-xs">Помощь</span>
+                        </div>
+                        <div class="d-flex flex-column align-items-center">
+                            <button class="p-0 bg-orange-gradient border-0 rounded-circle circle-button" onclick="toggleMobileMenu(event);">
+                                <i class="bi bi-list text-white fs-2"></i>
+                            </button>
+                            <span class="text-xs">Меню</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- header bottom -->
+            <div class="row d-lg-flex d-none justify-content-between">
+                <div class="col-9">
+                    <nav class="d-flex align-items-center justify-content-between">
+                        <button class="border-0 button btn-orange rounded-5" onclick="toggleCatalog(event);">
+                            <i class="bi bi-list fs-4 me-1"></i>
+                            <span>Каталог</span>
+                        </button>
+                        <a href="" class="text-decoration-none text-dark">Вопрос-ответ</a>
+                        <a href="" class="text-decoration-none text-dark">Доставка и оплата</a>
+                        <div class="dropdown">
+                            <button class="p-0 border-0 bg-transparent dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="me-1">О компании</span>
+                                <i class="bi bi-chevron-down text-orange arrow"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">История компании</a></li>
+                                <li><a class="dropdown-item" href="#">Контакты</a></li>
+                                <li><a class="dropdown-item" href="#">Семей</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown">
+                            <button class="p-0 border-0 bg-transparent dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="me-1">Блог</span>
+                                <i class="bi bi-chevron-down text-orange arrow"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Научные статьи</a></li>
+                                <li><a class="dropdown-item" href="#">Полезные рецепты</a></li>
+                                <li><a class="dropdown-item" href="#">Вопросы о продукции</a></li>
+                            </ul>
+                        </div>
+                        <a href="" class="text-decoration-none text-dark">Отзывы</a>
+                    </nav>
+                </div>
+                <div class="col-2 d-flex align-items-center justify-content-between">
+                    <div class="d-flex">
+                        <div class="cart-button position-relative">
+                            <button class="p-0 bg-orange-gradient border-0 rounded-circle circle-button me-2 pozition-relative">
+                                <img src="/assets/images/icons/cart.svg" alt="">
+                            </button>
+                            <div class="cart-indicator"></div>
+                        </div>
+                        <button class="p-0 bg-orange-gradient border-0 rounded-circle circle-button">
+                            <img src="/assets/images/icons/profile.svg" alt="">
+                        </button>
+                    </div>
+                    <div class="d-flex align-items-center bg-light lang-buttons">
+                        <button class="p-0 bg-orange-gradient border-0 rounded-circle circle-button-sm fw-bold lang-btn text-white" data-value="ru">RU</button>
+                        <button class="p-0 bg-light border-0 rounded-circle circle-button-sm fw-bold lang-btn" data-value="kz">KZ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="bg-image bg-image-production">
+        <section class="py-5">
+            <div class="container">
+                <div class="row mb-3">
+                    <!-- links -->
+                    <div class="col-12">
+                        <div class="d-flex align-items-center flex-wrap">
+                            <a href="" class="text-decoration-none text-secondary text-s">Главная страница</a>
+                            <span class="mx-2">-</span>
+                            <a href="" class="text-decoration-none text-secondary text-s">PhytoLab</a>
+                            <span class="mx-2">-</span>
+                            <a href="" class="text-decoration-none text-secondary text-s">Каталог продукции</a>
+                            <span class="mx-2">-</span>
+                            <a href="" class="text-decoration-none text-coral text-s ">Фитомиллы овса (150г.)</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5 col-12 mb-lg-0 mb-4">
+                        <div class="f-carousel" id="myCarousel">
+                          </div>
+                    </div>
+                    <div class="col-lg-7 col-12 d-flex flex-column">
+                        <h1 class="mb-2">Фитомиллы овес (150 г)</h1>
+                        <div class="d-lg-none d-block bg-yellow p-2 rounded-4 mb-2">
+                            <div class="d-flex align-items-center justify-content-center price-wrapper">
+                                <span class="fw-bold text-coral fs-2 me-2 sale" data-sum="700">700 ₸</span>
+                                <span class="text-secondary text-decoration-line-through fs-3 me-3 price" data-sum="950">950 ₸</span>
+                                <span class="btn-orange px-2 rounded-5 discount"></span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="/assets/images/producers/producer-1.svg" class="me-2 d-lg-block d-none" alt="">
+                            <p class="m-0 text-secondary">
+                                Производится по технологии, патент на которую отмечен Республиканской премией <a href="" class="text-orange">«Изобретение года»</a>
+                            </p>
+                        </div>
+                        <!-- LINKS GRID -->
+                        <div class="grid-4 mb-4 overflow-x-auto pb-lg-0 pb-4">
+                            <div class="d-flex align-items-center border-end border-2 border-warning pe-2">
+                                <div class="d-flex flex-column me-2">
+                                    <span class="fw-bold text-dark">123 отзыва</span>
+                                    <a href="" class="text-orange text-s">Смотреть отзывы</a>
+                                </div>
+                                <img src="/assets/images/icons/star.svg" alt="">
+                            </div>
+                            <div class="d-flex align-items-center border-end border-2 border-warning pe-2">
+                                <div class="d-flex flex-column me-2">
+                                    <span class="fw-bold text-dark">123 ответа на вопросы</span>
+                                    <a href="" class="text-orange text-s">Смотреть отзывы</a>
+                                </div>
+                                <img src="/assets/images/icons/question.svg" alt="">
+                            </div>
+                            <div class="d-flex align-items-center border-end border-2 border-warning pe-2">
+                                <div class="d-flex flex-column me-2">
+                                    <span class="fw-bold text-dark">123 отзыва</span>
+                                    <a href="" class="text-orange text-s">Смотреть отзывы</a>
+                                </div>
+                                <img src="/assets/images/icons/recipe.svg" alt="">
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="d-flex flex-column me-2">
+                                    <span class="fw-bold text-dark">123 отзыва</span>
+                                    <a href="" class="text-orange text-s">Смотреть отзывы</a>
+                                </div>
+                                <img src="/assets/images/icons/articles.svg" alt="">
+                            </div>
+                        </div>
+                        <!-- TYPES -->
+                        <div class="mb-2">
+                            <span class="text-secondary d-block mb-1">Выбрать другой вид продукта:</span>
+                            <div class="d-flex align-items-center flex-wrap type-buttons">
+                                <button class="btn-orange button-sm me-2 type-btn">овес</button>
+                                <button class="btn-light button-sm me-2 type-btn" disabled>овес</button>
+                                <button class="btn-outline-orange button-sm me-2 type-btn">клубника</button>
+                                <button class="btn-outline-orange button-sm type-btn">овес и клубника</button>
+                            </div>
+                        </div>
+                        <!-- GRAMS -->
+                        <div class="mb-4">
+                            <span class="text-secondary d-block mb-1">Грамовка:</span>
+                            <div class="d-flex align-items-center flex-wrap type-buttons">
+                                <button class="btn-outline-orange button-sm me-2 type-btn">150 г</button>
+                                <button class="btn-orange button-sm me-2 type-btn">300 г</button>
+                                <span class="text-sm">*150 г – хватает на 3 недели</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-5 col-12">
+                                <ul class="p-0 m-0">
+                                    <li class="d-flex align-items-center mb-2">
+                                        <img src="/assets/images/icons/about-link.svg" class="me-2" alt="">
+                                        <span class="m-0"><a href="" class="text-orange">Перейти</a> к описанию продукта</span>
+                                    </li>
+                                    <li class="d-flex align-items-center mb-2">
+                                        <img src="/assets/images/icons/eye-link.svg" class="me-2" alt="">
+                                        <span class="m-0"><a href="" class="text-orange">Смотреть</a> состав продукта</span>
+                                    </li>
+                                    <li class="d-flex align-items-start mb-2">
+                                        <img src="/assets/images/icons/delivery-link.svg" class="me-2" alt="">
+                                        <span class="m-0"><a href="" class="text-orange">Смотреть</a> информацию по доставке</span>
+                                    </li>
+                                    <li class="d-flex align-items-start">
+                                        <img src="/assets/images/icons/doc-link.svg" class="me-2" alt="">
+                                        <span class="m-0"><a href="" class="text-orange">Подтверждающие документы на товар</a></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-7 d-lg-block d-none">
+                                 <div class="bg-orange rounded-5 py-1 shadow mb-4">
+                                    <div class="bg-white rounded-5 p-5 d-flex flex-column align-items-center position-relative overflow-hidden">
+                                        <div class="d-flex align-items-center mb-2 price-wrapper position-relative z-2">
+                                            <span class="fw-bold text-coral fs-2 me-2 sale" data-sum="700">700 ₸</span>
+                                            <span class="text-secondary text-decoration-line-through fs-3 me-3 price" data-sum="950">950 ₸</span>
+                                            <span class="btn-orange px-2 rounded-5 discount">-25%</span>
+                                        </div>
+                                        <img src="/assets/images/bubles.svg" class="position-absolute z-1 end-0 bottom-0" alt="">
+                                        <button class="border-0 button btn-orange rounded-5 text-h button-lg mb-2">Добавить в корзину</button>
+                                        <div class="d-flex">
+                                            <img src="/assets/images/icons/click.svg" class="me-2" alt="">
+                                            <a href="" class="text-orange">Заказать через менеджера</a>
+                                        </div>
+                                    </div>
+                                 </div>
+                                <div class="d-flex align-items-center justify-content-center mb-4">
+                                    <img src="/assets/images/icons/freedel.svg" class="me-2" alt="">
+                                    <span>Бесплатная доставка при заказе от 10 000 тенге</span>
+                                </div>
+                                <div class="d-flex flex-column align-items-center">
+                                    <span class="fw-bold">Другие способы приобретения:</span>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <a href="" class="me-2">Маркетплейсах</a>
+                                        <a href="">Точки продаж</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- description -->
+        <section class="py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-12 mb-lg-0 mb-4">
+                        <h2 class="mb-4 text-coral">Описание</h2>
+                        <ul class="mb-4">
+                            <li><b>В 1989 году</b> кандидат технических наук Башкирцев Алексей Алексеевич разработал технологию «Сверхизмельчения».</li>
+                            <li><b>В 2008 году</b> технология была удостоена Республиканской премией Шапагат «Изобретение года».</li>
+                        </ul>
+                        <div class="grid-6 mb-4">
+                            <a data-fancybox data-src="/assets/images/docs/doc-1.png" class="doc-image position-relative p-2 bg-white rounded-2">
+                                <img src="/assets/images/docs/doc-1.png" class="position-relative w-100 z-1" alt="">
+                                <button class="doc-image_button position-absolute z-2 p-0 bg-orange-gradient border-0 rounded-circle circle-button text-decoration-none d-flex flex-column align-items-center justify-content-center">
+                                    <i class="bi bi-arrows-angle-expand text-white fs-4"></i>
+                                </button>
+                            </a>
+                            <a data-fancybox data-src="/assets/images/docs/doc-1.png" class="doc-image position-relative p-2 bg-white rounded-2">
+                                <img src="/assets/images/docs/doc-1.png" class="position-relative w-100 z-1" alt="">
+                                <button class="doc-image_button position-absolute z-2 p-0 bg-orange-gradient border-0 rounded-circle circle-button text-decoration-none d-flex flex-column align-items-center justify-content-center">
+                                    <i class="bi bi-arrows-angle-expand text-white fs-4"></i>
+                                </button>
+                            </a>
+                        </div>
+                        <p>С помощью этой технологии злаки, семена, ягоды, орехи, фрукты, травы и другие природные ингредиенты превращаются в супертонкий порошок — пудру. Каждая отдельная частичка такого порошка <b>в 100 раз тоньше человеческого волоса!</b></p>
+                        <p>Благодаря этому значительно возрастает усвояемость всех полезных веществ.</p>
+                        <p class="fw-bold">Впервые удалось открыть бесценную кладовую природы!</p>
+                        <button class="border-0 button btn-orange rounded-5">Читать подробнее о технологии</button>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <img src="/assets/images/description.webp" class="w-100" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contains -->
+        <section class="py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 d-flex flex-column align-items-center mb-4">
+                        <div class="p-5 rounded-5 bg-pink w-100 position-relative overflow-hidden contains-banner mb-4">
+                            <h2 class="m-0 text-coral text-lg position-relative z-3">Технология<br>производства</h2>
+                            <img src="/assets/images/img-last-section.webp" class="position-absolute z-1" alt="">
+                            <div class="bg-pink-gradient position-absolute top-0 w-100 start-0 h-100 z-2"></div>
+                        </div>
+                        <button class="border-0 button btn-outline-orange rounded-5">Раскрыть полное описание</button>
+                    </div>
+                    <div class="col-12">
+                        <ul>
+                            <li class="d-flex flex-column">
+                                <h3 class="fs-6">Состав</h3>
+                                <p>Волокна полученные из семян: льна, штирийской тыквы, амаранта, конопли, натурального кунжута, расторопши, черного тмина</p>
+                            </li>
+                            <li class="d-flex flex-column">
+                                <h3 class="fs-6">Срок годности</h3>
+                                <p>12 месяцев</p>
+                            </li>
+                            <li class="d-flex flex-column">
+                                <h3 class="fs-6">Условия хранения</h3>
+                                <p>Хранить при температуре от +2 до +25 С и относительное влажности воздуха не более 75%.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- delivery -->
+        <section class="py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 mb-4">
+                        <h2 class="text-coral">Доставка и оплата</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-12 d-flex mb-lg-0 mb-4">
+                        <i class="bi bi-geo-alt-fill me-2 text-orange"></i>
+                        <span>Ваш адрес Восточно-Казахстанская, г. Усть-Каменогорск, <a href="" class="text-orange">указать другой адрес</a></span>
+
+                    </div>
+                    <div class="col-lg-4 col-12 d-flex flex-column mb-lg-0 mb-4">
+                        <div class="d-flex mb-4">
+                            <img src="/assets/images/icons/z-delivery.svg" class="icon me-2" alt="">
+                            <span>Бесплатная доставка при заказе от 10 000 тенге</span>
+                        </div>
+                        <ul>
+                            <li class="d-flex flex-column">
+                                <h3 class="fs-6">Доставка курьером</h3>
+                                <span class="text-secondary text-sm">3-4 дня, 2 000 тенге</span>
+                            </li>
+                            <li class="d-flex flex-column">
+                                <h3 class="fs-6">Самовывоз в пункте выдачи или тастамате</h3>
+                                <span class="text-secondary text-sm">3-4 дня, 2 000 тенге</span>
+                            </li>
+                            <li class="d-flex flex-column">
+                                <h3 class="fs-6">Доставка Казпочтой</h3>
+                                <span class="text-secondary text-sm">3-4 дня, 2 000 тенге</span>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-lg-4 col-12 d-flex">
+                        <img src="/assets/images/icons/click-orange.svg" class="icon me-2" alt="">
+                        <a href="" class="text-orange">Задать вопрос по доставке</a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- payment -->
+        <section class="py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 mb-4">
+                        <h2 class="text-coral">Другие способы приобретения*</h2>
+                        <span class="text-secondary text-s">Цены на маркетплейсах могут отличаться*</span>
+                    </div>
+                </div>
+                <div class="row" id="payment-way">
+
+                </div>
+            </div>
+        </section>
+        <!-- buy together -->
+        <section class="py-3">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h2 class="text-coral">Часто покупают вместе</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-12 mb-lg-0 mb-3">
+                        <div class="d-flex align-items-center">
+                            <div class="product-card">
+                                <img src="/assets/images/products/123455/imgcard.png" class="rounded-3" alt="">
+                            </div>
+                            <span class="text-orange mx-3">+</span>
+                            <div class="product-card">
+                                <img src="/assets/images/products/123455/imgcard.png" class="rounded-3" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <div class="d-flex flex-column product-checkboxes mb-3">
+                            <div class="d-flex align-items-center justify-content mb-2">
+                                <i class="bi bi-check px-2 py-1 border rounded text-white checkbox me-2 checked" onclick="toggleCheckbox(event);" data-sum="700"></i>
+                                <span class="text-secondary">Напиток «Фитомиллы со вкусом овса» 150 гр. <span class="fw-bold text-dark">700 ₸</span></span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content">
+                                <i class="bi bi-check px-2 py-1 border rounded text-white checkbox me-2 checked" onclick="toggleCheckbox(event);" data-sum="700"></i>
+                                <span class="text-secondary">Напиток «Фитомиллы со вкусом овса» 300 гр. <span class="fw-bold text-dark">700 ₸</span></span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="extra-products-count me-2 fw-bold fs-2 text-coral"></span>
+                            <span class="fw-bold fs-2 text-coral">₸</span>
+                        </div>
+                        <button class="btn-green rounded-5 button border-0">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- up button -->
+    <button class="up-button position-fixed z-3 text-orange p-0 bg-white border-1 border-orange shadow rounded-circle d-none">
+        <i class="bi bi-arrow-up-short"></i>
+    </button>
+
+    <!-- add to cart button -->
+    <button class="d-lg-none d-flex add-to-cart-btn-mobile position-fixed z-3 text-h button rounded-5 border-0 btn-orange">
+        Добавить в корзину
+    </button>
+
+    <!-- bottom menu -->
+    <div class="bottom-menu position-fixed w-100 start-0 d-lg-none d-block px-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 grid-5 bg-white rounded-5 shadow p-3 bottom-navigation">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- catalog menu -->
+    <div class="position-absolute bg-white z-2 py-4 start-0 w-100 hide-catalog-menu overflow-hidden d-lg-block d-none" id="catalog-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="p-0 mb-3 list-unstyled">
+                                <li class="mb-2"><a href="" class="text-decoration-none text-dark fw-bold">Название линейки 1</a></li>
+                                <li class="mb-2"><a href="" class="text-decoration-none text-dark fw-bold">Название линейки 2</a></li>
+                                <li class="mb-2"><a href="" class="text-decoration-none text-dark fw-bold">Название линейки 3</a></li>
+                                <li><a href="" class="text-decoration-none text-dark fw-bold">Название линейки 4</a></li>
+                            </ul>
+                            <a href="" class="text-orange">Смотреть все линейки</a>
+                        </div>
+                        <div class="col-6">
+                            <a href="" class="d-flex align-items-center text-decoration-none mb-2">
+                                <span class="text-dark fw-bold me-2">Акции</span>
+                                <i class="bi bi-percent text-white px-2 text-s rounded bg-orange"></i>
+                            </a>
+                            <a href="" class="d-flex align-items-center text-decoration-none">
+                                <span class="text-dark fw-bold me-2">Новинки</span>
+                                <span class="text-s text-white px-2 text-xs rounded bg-orange">NEW</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8 grid-3">
+                    <div class="bg-pink rounded-3 p-4">
+                        <div class="d-flex justify-content-end">
+                            <img src="/assets/images/catalog-img.png" class="w-25" alt="">
+                        </div>
+                        <h3 class="m-0 text-h text-coral fs-4">Технология<br>производства</h3>
+                    </div>
+                    <div class="bg-pink rounded-3 p-4">
+                        <div class="d-flex justify-content-end">
+                            <img src="/assets/images/catalog-img.png" class="w-25" alt="">
+                        </div>
+                        <h3 class="m-0 text-h text-coral fs-4">Технология<br>производства</h3>
+                    </div>
+                    <div class="bg-pink rounded-3 p-4">
+                        <div class="d-flex justify-content-end">
+                            <img src="/assets/images/catalog-img.png" class="w-25" alt="">
+                        </div>
+                        <h3 class="m-0 text-h text-coral fs-4">Технология<br>производства</h3>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- mobile-menu -->
+    <div class="position-fixed pt-2 pb-5 mb-5 start-0 w-100 vh-100  overflow-y-scroll bg-white d-lg-none d-block hide-mobile-menu" id="mobile-menu">
+        <div class="container mb-5 pb-5">
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <div class="d-flex align-items-center bg-light lang-buttons">
+                        <button class="p-0 bg-orange-gradient w-50 border-0 rounded-5 circle-button-sm fw-bold lang-btn text-white" data-value="ru">RU</button>
+                        <button class="p-0 bg-light w-50 border-0 rounded-5 circle-button-sm fw-bold lang-btn" data-value="kz">KZ</button>
+                    </div>
+                </div>
+                <div class="col-12 d-flex align-items-center justify-content-between mb-4">
+                    <div class="d-flex align-items-center city" id="city">
+                        <i class="bi bi-geo-alt-fill text-orange me-2"></i>
+                        <button class="p-0 bg-transparent border-0 city-btn fs-5 fw-bold text-h border-bottom" onclick="toggleCityPopup();">Усть-Каменогорск</button>
+                    </div>
+                    <button class="btn-outline-orange py-2 px-3 text-dark rounded-5">Изменить</button>
+                </div>
+                <div class="col-12 mb-2">
+                    <a href="mailto:zakaz@fitoshop.kz" class="fw-bold fs-5 text-dark">zakaz@fitoshop.kz</a>
+                </div>
+                <div class="col-12 d-flex align-items-center mb-4">
+                    <a href="" class="d-flex align-items-center me-3">
+                        <i class="bi bi-whatsapp px-2 py-1 bg-orange-light rounded-circle text-white fs-5 me-2"></i>
+                        <span class="text-dark fs-5">WhatsApp</span>
+                    </a>
+                    <a href="" class="d-flex align-items-center me-3">
+                        <i class="bi bi-telegram px-2 py-1 bg-orange-light rounded-circle text-white fs-5 me-2"></i>
+                        <span class="text-dark fs-5">Telegram</span>
+                    </a>
+                </div>
+                <div class="col-12 mb-4">
+                    <ul class="list-unstyled" id="mobile-menu-list">
+                        
+                    </ul>
+                </div>
+
+                <!-- catalog -->
+                <div class="col-12 mb-4">
+                    <div class="d-flex align-items-center justify-content-between collapse-wrapper" >
+                        <h3 class="m-0 text-h text-green fs-1 collapse-btn" data-bs-toggle="collapse" href="#collapseCatalog" role="button" aria-expanded="false" aria-controls="collapseCatalog">Каталог</h3>
+                        <button class="bg-orange rounded-circle circle-button d-flex flex-column align-items-center justify-content-center border-0">
+                            <i class="bi bi-chevron-down text-white"></i>
+                        </button>
+                    </div>
+                    <div class="collapse" id="collapseCatalog">
+                        <div class="col-12 mt-4 mb-4">
+                            <div class="bg-pink rounded-4 px-4 position-relative">
+                                <div class="d-flex justify-content-between align-items-end">
+                                    <h3 class="mb-4 text-h text-coral fs-3">Технология<br>производства</h3>
+                                    <img src="/assets/images/catalog-img.png" class="w-50" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <ul class="list-unstyled">
+                                <a href="" class="d-flex align-items-center text-decoration-none mb-2 pb-2 border-bottom">
+                                    <span class="text-dark fw-bold me-2 fs-4">Акции</span>
+                                    <i class="bi bi-percent text-white px-2 text-s rounded bg-orange"></i>
+                                </a>
+                                <a href="" class="d-flex align-items-center text-decoration-none mb-2 pb-2 border-bottom">
+                                    <span class="text-dark fw-bold me-2 fs-4">Новинки</span>
+                                    <span class="text-s text-white px-2 text-xs rounded bg-orange">NEW</span>
+                                </a>
+                                <li class="mb-2 pb-2 border-bottom"><a href="" class="text-decoration-none text-dark fw-bold fs-4">Название линейки 1</a></li>
+                                <li class="mb-2 pb-2 border-bottom"><a href="" class="text-decoration-none text-dark fw-bold fs-4">Название линейки 2</a></li>
+                                <li class="mb-2 pb-2 border-bottom"><a href="" class="text-decoration-none text-dark fw-bold fs-4">Название линейки 3</a></li>
+                                <li class="mb-2 pb-2 border-bottom"><a href="" class="text-decoration-none text-dark fw-bold fs-4">Название линейки 4</a></li>
+                                
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!--  -->
+                <div class="col-12 mb-5 pb-5">
+                    <div class="d-flex align-items-center justify-content-between collapse-wrapper" >
+                        <h3 class="m-0 text-h text-green fs-1 collapse-btn" data-bs-toggle="collapse" href="#collapseHelp" role="button" aria-expanded="false" aria-controls="collapseHelp">Помощь в выборе</h3>
+                        <button class="bg-orange rounded-circle circle-button d-flex flex-column align-items-center justify-content-center border-0">
+                            <i class="bi bi-chevron-down text-white"></i>
+                        </button>
+                    </div>
+                    <div class="collapse" id="collapseHelp">
+                        <div class="col-12 mt-4 d-flex flex-column">
+                            <div class="bg-coral py-1 rounded-5 mb-3">
+                                <div class="bg-white rounded-5 p-3 d-flex flex-column align-items-center position-relative overflow-hidden">
+                                    <div class="d-flex align-items-center">
+                                        <p class="m-0 me-2 fs-5">Выбрать этот продукт по его полезным свойствам</p>
+                                        <img src="/assets/images/icons/z-heart.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-coral py-1 rounded-5 mb-3">
+                                <div class="bg-white rounded-5 p-3 d-flex flex-column align-items-center position-relative overflow-hidden">
+                                    <div class="d-flex align-items-center">
+                                        <p class="m-0 me-2 fs-5">Выбрать продукт по ингредиентам</p>
+                                        <img src="/assets/images/icons/z-vegetables.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-coral py-1 rounded-5 mb-3">
+                                <div class="bg-white rounded-5 p-3 d-flex flex-column align-items-center position-relative overflow-hidden">
+                                    <div class="d-flex align-items-center">
+                                        <p class="m-0 me-2 fs-5">Смотреть все линейки продукции</p>
+                                        <img src="/assets/images/icons/z-logo.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-coral py-1 rounded-5">
+                                <div class="bg-white rounded-5 p-3 d-flex flex-column align-items-center position-relative overflow-hidden">
+                                    <div class="d-flex align-items-center">
+                                        <p class="m-0 me-2 fs-5">Выбрать продукт по полезным рецептам и способу употребления</p>
+                                        <img src="/assets/images/icons/z-dish.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="/assets/js/plugins/jquery.min.js"></script>
+    <script src="/assets/js/plugins/owl.carousel.min.js"></script>
+    <script src="/assets/js/plugins/wow.min.js"></script>
+    <script src="/assets/js/plugins/fancybox.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.umd.js"></script>
+
+    <script src="/assets/js/index.js"></script>
+
+    <script src="/assets/js/components/top-banner.js"></script>
+    <script src="/assets/js/components/bottom-navigation.js"></script>
+    <script src="/assets/js/components/progress.js"></script>
+    <script src="/assets/js/components/lang-changer.js"></script>
+    <script src="/assets/js/components/up-button.js"></script>
+    <script src="/assets/js/pages/product-page.js"></script>
+    <script src="/assets/js/components/gallery.js"></script>
+    <script src="/assets/js/components/payment-way.js"></script>
+    <script src="/assets/js/components/catalog-menu.js"></script>
+    <script src="/assets/js/components/dropdown-toggle.js"></script>
+    <script src="/assets/js/components/mobile-menu.js"></script>
+</body>
+</html>

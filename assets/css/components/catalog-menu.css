@@ -1,0 +1,12 @@
+#catalog-menu{
+    top: 202px;
+    transition: all .3s ease-in-out;
+    height: 230px;
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2);
+
+}
+.hide-catalog-menu{
+    height: 0!important;
+    padding: 0!important;
+
+}

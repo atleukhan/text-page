@@ -1,0 +1,23 @@
+.text-h{
+    font-family: Cocon-regular;
+}
+.text-lg{
+    font-size: 84px;
+}
+.text-s{
+    font-size: 14px;
+}
+.text-xs{
+    font-size: 12px;
+}
+.text-xxs{
+    font-size: 10px;
+}
+/* media queries */
+@media (min-width: 768px) and (max-width: 992px){
+}
+@media (max-width:768px){
+    .text-lg{
+        font-size: 34px;
+    }
+}

@@ -1,0 +1,8 @@
+#mobile-menu{
+    top: 138px;
+    z-index: 24;
+    transition: all .2s ease-in-out;
+}
+.hide-mobile-menu{
+    top: -100%!important;
+}

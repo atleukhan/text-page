@@ -1,0 +1,29 @@
+.top-banners {
+    height: 40px;
+    z-index: 26;
+}
+#bg-gradient-line {
+    opacity: 0;
+    animation: slideIn 3s infinite;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 0.50;
+    }
+}
+
+/* media queries */
+@media (min-width: 768px) and (max-width: 992px){
+
+}
+@media (max-width:768px){
+    .top-banner-item{
+        min-width: max-content;
+    }
+}

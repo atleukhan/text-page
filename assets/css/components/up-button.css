@@ -1,0 +1,19 @@
+.up-button{
+    width: 50px;
+    height: 50px;
+    right: 50px;
+    bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+/* media queries */
+@media (min-width: 768px) and (max-width: 992px){
+}
+@media (max-width:768px){
+    .up-button{
+        bottom: 200px;
+    }
+}

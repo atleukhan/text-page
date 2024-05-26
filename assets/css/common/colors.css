@@ -1,0 +1,12 @@
+.text-coral{
+    color: var(--coral);
+}
+.text-orange{
+    color: var(--orange);
+}
+.text-green{
+    color: var(--green);
+}
+.border-orange{
+    border: 1px solid var(--orange);
+}

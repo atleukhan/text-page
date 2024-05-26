@@ -1,0 +1,12 @@
+.bottom-menu{
+    bottom: 20px;
+    z-index: 20;
+}
+.active-menu-item svg path{
+    fill: var(--orange);
+}
+.add-to-cart-btn-mobile{
+    bottom: 120px;
+    left:50%;
+    transform: translate(-50%, 0);
+}
