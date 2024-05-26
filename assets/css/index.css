@@ -36,7 +36,7 @@
 *{
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    outline: 2px solid green!important;
+    /* outline: 2px solid green!important; */
 }
 
 h1, h2{
