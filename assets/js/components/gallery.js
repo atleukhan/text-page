@@ -1,9 +1,9 @@
 let slides = [
-    { "src":"/assets/images/products/123456/Instagram post - 1.webp" },
-    { "src":"/assets/images/products/123456/Instagram post - 2.webp" },
-    { "src":"/assets/images/products/123456/Instagram post - 3.webp" },
-    { "src":"/assets/images/products/123456/Instagram post - 4.webp" },
-    { "src":"/assets/images/products/123456/Instagram post - 5.webp" },
+    { "src":"assets/images/products/123456/Instagram post - 1.webp" },
+    { "src":"assets/images/products/123456/Instagram post - 2.webp" },
+    { "src":"assets/images/products/123456/Instagram post - 3.webp" },
+    { "src":"assets/images/products/123456/Instagram post - 4.webp" },
+    { "src":"assets/images/products/123456/Instagram post - 5.webp" },
 ];
 let fancyCarousel = document.querySelector('.f-carousel');
 let slideItem = "";

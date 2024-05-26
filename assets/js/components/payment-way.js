@@ -1,21 +1,21 @@
 let payments = [
     {
-        "logo":"/assets/images/icons/kaspi-ico.svg",
+        "logo":"assets/images/icons/kaspi-ico.svg",
         "title":"Купить в магазине на Kaspi.kz",
         "text":"93% положительных отзывов"
     },
     {
-        "logo":"/assets/images/icons/ozon-ico.svg",
+        "logo":"assets/images/icons/ozon-ico.svg",
         "title":"Купить в магазине на Ozon",
         "text":"93% положительных отзывов"
     },
     {
-        "logo":"/assets/images/icons/wb-ico.svg",
+        "logo":"assets/images/icons/wb-ico.svg",
         "title":"Купить в магазине на Wildberies",
         "text":"93% положительных отзывов"
     },
     {
-        "logo":"/assets/images/icons/yandex-ico.svg",
+        "logo":"assets/images/icons/yandex-ico.svg",
         "title":"Купить в магазине на Yandex Market",
         "text":"93% положительных отзывов"
     },
