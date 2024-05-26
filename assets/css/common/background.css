@@ -30,5 +30,5 @@
     background-size: contains;
 }
 .bg-image-production{
-    background-image: url(assets/images/production-bg.webp);
+    background-image: url(../../images/production-bg.webp);
 }
